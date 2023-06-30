@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="robot_control" name="pub_odom" type="pub_odom.py">
+    <remap from="/odom" to="/vehicle/odom"/>
+    </node>
+</launch>
+ 
+
