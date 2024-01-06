@@ -1,0 +1,16 @@
+<!-- publish_pcd_map.launch -->
+<launch>
+  <param name="frame_id" value="map"/>
+  
+  <node pkg="pcl_ros" type="pcd_to_pointcloud" name="pcd_to_pointcloud" output="screen">
+    <param name="input_pcd_path" type="str" value="/home/tranchung/shared_dir/data/232_0621_map3-2.pcd"/>
+    <param name="output_topic" type="str" value="/map"/>
+  </node>
+
+  <node pkg="octomap_server" type="octomap_server_node" name="octomap_server" output="screen">
+    <param name="resolution" type="double" value="0.05"/>
+    <param name="publish_full_map" type="bool" value="true"/>
+    <param name="input_cloud_topic" type="string" value="/map"/>
+  </node>
+</launch>
+

@@ -1,0 +1,8 @@
+<!-- convert_pcd.launch -->
+<launch>
+  <node pkg="pcl_ros" type="pcd_to_pointcloud" name="pcd_to_pointcloud" output="screen">
+    <param name="input_pcd_path" type="str" value="/home/tranchung/shared_dir/data/232_0621_map3-2.pcd"/>
+    <param name="output_topic" type="str" value="/map_cloud"/>
+  </node>
+</launch>
+
